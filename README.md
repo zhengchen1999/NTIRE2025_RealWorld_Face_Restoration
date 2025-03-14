@@ -100,7 +100,7 @@ python eval.py \
 
 The `eval.py` file accepts the following 6 parameters:
 - `mode`: Choose whether to test images from the `test` set or the `val` set.
-- `output_folder`: Path where the restored images will be saved. Subdirectories should be organized by dataset names.
+- `output_folder`: Path where the restored images are saved. Subdirectories should be organized by dataset names.
 - `lq_ref_folder`: Path to the LQ images provided as input to the model. This path should be the parent directory of the `test` and `val` sets.
 - `metrics_save_path`: Directory where the evaluation metrics will be saved.
 - `device`: Computation devices. For multi-GPU setups, use the format `0,1,2,3`.
