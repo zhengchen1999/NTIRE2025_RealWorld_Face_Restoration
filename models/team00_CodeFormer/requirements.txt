@@ -1,0 +1,17 @@
+addict
+future
+lmdb
+numpy<2.0
+opencv-python
+Pillow
+pyyaml
+requests
+scikit-image
+scipy
+tensorboard
+torch>=1.7.1
+torchvision
+tqdm
+yapf
+lpips
+gdown # supports downloading the large file from Google Drive
