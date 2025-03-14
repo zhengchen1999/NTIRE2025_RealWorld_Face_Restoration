@@ -7,7 +7,7 @@
 # *.jpg
 *.pt
 *.gif
-*.pth
+# *.pth
 *.dat
 *.zip
 
