@@ -48,31 +48,40 @@ input_LQ_dir
 │   ├── CelebChild-Test
 │   ├── ...
 ├── val
-    ├── CelebA
-    ├── CelebChild-Test
-    ├──...
-    
-output_dir
-├── test
 │   ├── CelebA
 │   ├── CelebChild-Test
-│   ├──...
-├── val
-    ├── CelebA
-    ├── CelebChild-Test
-    ├──...
+│   ├── ...
+    
+output_dir_test
+├── CelebA
+├── CelebChild-Test
+├──...
+output_dir_val
+├── CelebA
+├── CelebChild-Test
+├──...
 ```
 
 ### Command to calculate metrics
 
 ```sh
 python eval.py \
---output_folder "/path/to/your/output_dir" \
---savelq_ref_folder "/path/to/input_LQ_dir" \
+--mode "test" \
+--output_folder "/path/to/your/output_dir_test" \
+--lq_ref_folder "/path/to/input_LQ_dir" \
+--metrics_save_path "./IQA_results" \
 --gpu_ids 0 \
 --use_qalign True 
 ```
-The `--use_qalign` option is used to enable or disable QALIGN, which will consume 15GB of GPU memory.
+
+The `eval.py` file accepts the following 6 parameters:
+- `mode`: Choose whether to test images from the `test` set or the `val` set.
+- `output_folder`: Path where the restored images will be saved. Subdirectories should be organized by dataset names.
+- `lq_ref_folder`: Path to the LQ images provided as input to the model. This path should be the parent directory of the `test` and `val` sets.
+- `metrics_save_path`: Directory where the evaluation metrics will be saved.
+- `device`: Computation devices. For multi-GPU setups, use the format `0,1,2,3`.
+- `use_qalign`: Whether to use QALIGN or not, which will consume an additional 15GB of GPU memory.
+
 
 
 ## License and Acknowledgement
