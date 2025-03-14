@@ -12,7 +12,7 @@
 
 ## How to add your model to this baseline?
 
-Edit the `else` to `elif` in [eval.py](./eval.py#L24), and then you can add your own model with model id. 
+Edit the `else` to `elif` in [test.py](./test.py#L24), and then you can add your own model with model id. 
 
 `model_func` should be a function, which accept 4 params. 
 - `model_dir`: the pretrained model. Participants are expected to save their pretrained model in `./model_zoo/` with in a folder named `teamID_MODELNAME`. 
