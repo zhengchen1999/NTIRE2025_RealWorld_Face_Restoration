@@ -60,8 +60,8 @@ def run(model_func, model_name, model_path, device, args, mode="test"):
 
 def main(args):
 
-    utils_logger.logger_info("NTIRE2024-ImageSRx4", log_path="NTIRE2024-ImageSRx4.log")
-    logger = logging.getLogger("NTIRE2024-ImageSRx4")
+    utils_logger.logger_info("NTIRE2025-RealWorld-Face-Restoration", log_path="NTIRE2025-RealWorld-Face-Restoration.log")
+    logger = logging.getLogger("NTIRE2025-RealWorld-Face-Restoration")
 
     # --------------------------------
     # basic settings
