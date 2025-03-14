@@ -31,7 +31,7 @@
 
    - `model_func` **must** be a function, which accept **4 params**. 
 
-     - `model_dir`: the pretrained model. Participants are expected to save their pretrained model in `./model_zoo/` with in a folder named `[Your_Team_ID]_[Your_Model_Name]` (e.g., team00_CodeFormer). 
+     - `model_dir`: the pretrained model. Participants are expected to save their pretrained model in `./model_zoo/` with in a folder named `[Your_Team_ID]_[Your_Model_Name]` (e.g., team00_CodeFormer).
 
      - `input_path`: a folder contains several images in PNG format. 
 
