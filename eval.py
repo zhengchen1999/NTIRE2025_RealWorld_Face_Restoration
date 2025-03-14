@@ -147,6 +147,7 @@ if __name__ == "__main__":
     parser.add_argument("--mode", type=str, default='test', choices=['test', 'val'])
     parser.add_argument("--output_folder", type=str, required=True)
     parser.add_argument("--lq_ref_folder", type=str, default="./NTIRE-FR")
+    parser.add_argument("--metrics_save_path", type=str, default="./IQA_results")
     parser.add_argument("--gpu_ids", type=str, default="0")
     parser.add_argument("--use_qalign", type=str, choices=['True', 'False'], default='True')
     args = parser.parse_args()
@@ -183,9 +184,9 @@ if __name__ == "__main__":
     folder_name = os.path.basename(args.output_folder)
     parent_folder = os.path.dirname(args.output_folder)
     next_level_folder = os.path.basename(parent_folder)
-    os.makedirs(f"IQA_results", exist_ok=True)
-    average_results_filename = f"IQA_results/{next_level_folder}--{folder_name}_total.csv"
-    results_filename = f"IQA_results/{next_level_folder}--{folder_name}.csv"
+    os.makedirs(args.metrics_save_path, exist_ok=True)
+    average_results_filename = f"{args.metrics_save_path}/{next_level_folder}--{folder_name}_total.csv"
+    results_filename = f"{args.metrics_save_path}/{next_level_folder}--{folder_name}.csv"
 
     if results:
         all_keys = set()
