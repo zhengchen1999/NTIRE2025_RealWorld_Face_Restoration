@@ -12,13 +12,37 @@
 
 ## How to add your model to this baseline?
 
-Edit the `else` to `elif` in [test.py](./test.py#L24), and then you can add your own model with model id. 
+**🚨 Submissions that do not follow the official format will be rejected.**
 
-`model_func` should be a function, which accept 4 params. 
-- `model_dir`: the pretrained model. Participants are expected to save their pretrained model in `./model_zoo/` with in a folder named `teamID_MODELNAME`. 
-- `input_path`: a folder contains several images in PNG format. 
-- `output_path`: a folder contains restored images in PNG format. Please follow the section Folder Structure. 
-- `device`: computation device. 
+1. Register your team in the [Google Spreadsheet](https://docs.google.com/spreadsheets/d/1ba9oySZfoF9DW9q_JXFk4X0MMK_OQlHiswbgNJj-2gc/edit?usp=sharing) and get your team ID.
+
+2. Put your the code of your model in folder:  `./models/[Your_Team_ID]_[Your_Model_Name]`
+
+   - Please zero pad [Your_Team_ID] into two digits: e.g. 00, 01, 02
+
+3. Put the pretrained model in folder: `./model_zoo/[Your_Team_ID]_[Your_Model_Name]`
+
+   - Please zero pad [Your_Team_ID] into two digits: e.g. 00, 01, 02
+   - Note: Please provide a download link for the pretrained model, if the file size exceeds **100 MB**. Put the link in `./model_zoo/[Your_Team_ID]_[Your_Model_Name]/[Your_Team_ID]_[Your_Model_Name].txt`: e.g. [team00_CodeFormer.txt](./model_zoo/team00_CodeFormer/team00_CodeFormer.txt)
+
+4. Add your model to the model loader `test.py` as follows:
+
+   - Edit the `else` to `elif` in [test.py](./test.py#L24), and then you can add your own model with model id.
+
+   - `model_func` **must** be a function, which accept **4 params**. 
+
+     - `model_dir`: the pretrained model. Participants are expected to save their pretrained model in `./model_zoo/` with in a folder named `[Your_Team_ID]_[Your_Model_Name]` (e.g., team00_CodeFormer). 
+
+     - `input_path`: a folder contains several images in PNG format. 
+
+     - `output_path`: a folder contains restored images in PNG format. Please follow the section Folder Structure. 
+
+     - `device`: computation device.
+
+5. Send us the command to download your code, e.g,
+
+   - `git clone [Your repository link]`
+   - We will add your code and model checkpoint to the repository after the challenge.
 
 ## How to eval images using NR-IQA metrics and facial ID?
 
