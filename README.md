@@ -10,11 +10,17 @@
     CUDA_VISIBLE_DEVICES=0 python eval.py --valid_dir [path to val data dir] --test_dir [path to test data dir] --save_dir [path to your save dir] --model_id 0
     ```
     - You can use either `--valid_dir`, or `--test_dir`, or both of them. Be sure the change the directories `--valid_dir`/`--test_dir` and `--save_dir`.
-    - We provide a baseline (team00): CodeFormer (default). Switch models (default is CodeFormer) through commenting the code in [eval.py](./eval.py#L19). Three baselines are all test normally with `run.sh`.
+    - We provide a baseline (team00): CodeFormer (default). Switch models (default is CodeFormer) through commenting the code in [eval.py](./eval.py#L19). 
 
 ## How to add your model to this baseline?
 
-[TODO]
+Edit the `else` to `elif` in [eval.py](./eval.py#L24), and then you can add your own model with model id. 
+
+`model_func` should be a function, which accept 4 params. 
+- `model_dir`: the pretrained model. Participants are expected to save their pretrained model in `./model_zoo/` with in a folder named `teamID_MODELNAME`. 
+- `input_path`: a folder contains several images in PNG format. 
+- `output_path`: a folder contains restored images in PNG format. Please follow the section Folder Structure. 
+- `device`: computation device. 
 
 ## How to test images using NR-IQA metrics and facial ID?
 
@@ -75,4 +81,4 @@ The `--use_qalign` option is used to enable or disable QALIGN, which will consum
 
 This code repository is release under [MIT License](LICENSE). 
 
-Several implementations are taken from: [IQA-PyTorch](https://github.com/chaofengc/IQA-PyTorch), [VQFR](https://github.com/TencentARC/VQFR). 
+Several implementations are taken from: [IQA-PyTorch](https://github.com/chaofengc/IQA-PyTorch), [VQFR](https://github.com/TencentARC/VQFR), [Q-Align](https://github.com/Q-Future/Q-Align). 
