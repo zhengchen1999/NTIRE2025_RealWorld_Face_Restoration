@@ -55,13 +55,10 @@ pip install -r requirements.txt
 ```
 
 ### Metrics include:
-1. **NIQE**, **CLIP-IQA**, **MANIQA**, **MUSIQ**  
+1. **NIQE**, **CLIP-IQA**, **MANIQA**, **MUSIQ**, **Q-Align**  
    - Provided by [IQA-PyTorch](https://github.com/chaofengc/IQA-PyTorch)
 
-2. **QALIGN**  
-   - Provided by [Q-Align](https://github.com/Q-Future/Q-Align)
-
-3. **FID** (using FFHQ as reference)  
+2. **FID** (using FFHQ as reference)  
    - Provided by [VQFR](https://github.com/TencentARC/VQFR)
 
 ### Folder Structure
@@ -104,7 +101,7 @@ The `eval.py` file accepts the following 6 parameters:
 - `lq_ref_folder`: Path to the LQ images provided as input to the model. This path should be the parent directory of the `test` and `val` sets.
 - `metrics_save_path`: Directory where the evaluation metrics will be saved.
 - `device`: Computation devices. For multi-GPU setups, use the format `0,1,2,3`.
-- `use_qalign`: Whether to use QALIGN or not, which will consume an additional 15GB of GPU memory.
+- `use_qalign`: Whether to use Q-Align or not, which will consume an additional 15GB of GPU memory.
 
 
 
@@ -112,4 +109,4 @@ The `eval.py` file accepts the following 6 parameters:
 
 This code repository is release under [MIT License](LICENSE). 
 
-Several implementations are taken from: [IQA-PyTorch](https://github.com/chaofengc/IQA-PyTorch), [VQFR](https://github.com/TencentARC/VQFR), [Q-Align](https://github.com/Q-Future/Q-Align). 
+Several implementations are taken from: [IQA-PyTorch](https://github.com/chaofengc/IQA-PyTorch), [VQFR](https://github.com/TencentARC/VQFR). 
