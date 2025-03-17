@@ -7,7 +7,8 @@
 # *.jpg
 *.pt
 *.gif
-# *.pth
+*.pth
+*.ckpt
 *.dat
 *.zip
 
@@ -16,15 +17,8 @@
 # User generates files
 IQA_results/
 
-model_zoo/*.pth
-model_zoo/*.pt
-model_zoo/*.ckpt
-model_zoo/*.bin
-
-pretrained/*.pth
-pretrained/*.pt
-pretrained/*.ckpt
-pretrained/*.bin
+model_zoo/team00_CodeFormer/CodeFormer
+model_zoo/team00_CodeFormer/facelib
 
 NTIRE-FR
 

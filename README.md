@@ -69,7 +69,14 @@ pip install -r requirements.txt
 
 2. **FID** (using FFHQ as reference)  
    - Provided by [VQFR](https://github.com/TencentARC/VQFR)
+3. **Facial ID Consistency**
+   - Model Provided by [AdaFace](https://github.com/mk-minchul/AdaFace)
 
+### Pretrained Weight
+You should first create a folder named `pretrained` in the root directory and download the following weights into it:
+
+- adaface_ir50_ms1mv2.ckpt ([Google Drive](https://drive.google.com/file/d/1eUaSHG4pGlIZK7hBkqjyp2fc2epKoBvI/view?usp=sharing))
+- inception_FFHQ_512.pth ([Google Drive](https://drive.google.com/drive/folders/1k3RCSliF6PsujCMIdCD1hNM63EozlDIZ?usp=sharing))
 ### Folder Structure
 ```
 input_LQ_dir
@@ -118,4 +125,4 @@ The `eval.py` file accepts the following 6 parameters:
 
 This code repository is release under [MIT License](LICENSE). 
 
-Several implementations are taken from: [IQA-PyTorch](https://github.com/chaofengc/IQA-PyTorch), [VQFR](https://github.com/TencentARC/VQFR). 
+Several implementations are taken from: [IQA-PyTorch](https://github.com/chaofengc/IQA-PyTorch), [VQFR](https://github.com/TencentARC/VQFR), [AdaFace](https://github.com/mk-minchul/AdaFace). 
