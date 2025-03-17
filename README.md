@@ -72,7 +72,7 @@ pip install -r requirements.txt
 3. **Facial ID Consistency**
    - Model Provided by [AdaFace](https://github.com/mk-minchul/AdaFace)
 
-### Pretrained Weight
+### Pretrained Weights
 You should first create a folder named `pretrained` in the root directory and download the following weights into it:
 
 - adaface_ir50_ms1mv2.ckpt ([Google Drive](https://drive.google.com/file/d/1eUaSHG4pGlIZK7hBkqjyp2fc2epKoBvI/view?usp=sharing))
