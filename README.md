@@ -8,7 +8,16 @@
     CUDA_VISIBLE_DEVICES=0 python test.py --valid_dir [path to val data dir] --test_dir [path to test data dir] --save_dir [path to your save dir] --model_id 0
     ```
     - You can use either `--valid_dir`, or `--test_dir`, or both of them. Be sure the change the directories `--valid_dir`/`--test_dir` and `--save_dir`.
-    - We provide a baseline (team00): CodeFormer (default). Switch models (default is CodeFormer) through commenting the code in [test.py](./test.py#L19). 
+    - We provide a baseline (team00): CodeFormer (default). Switch models (default is CodeFormer) through commenting the code in [test.py](./test.py#L19). Caution: You should download the pretrained model with the link in `model_zoo/team00_CodeFormer/team00_CodeFormer.txt` (or from [CodeFormer official codebase](https://github.com/sczhou/CodeFormer)), and put the files in following structure: 
+      ```
+      model_zoo
+      └── team00_CodeFormer
+         ├── CodeFormer
+         │   └── codeformer.pth
+         └── facelib
+            ├── detection_Resnet50_Final.pth
+            └── parsing_parsenet.pth
+      ```
 
 ## How to add your model to this baseline?
 
