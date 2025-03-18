@@ -119,7 +119,15 @@ The `eval.py` file accepts the following 6 parameters:
 - `device`: Computation devices. For multi-GPU setups, use the format `0,1,2,3`.
 - `use_qalign`: Whether to use Q-Align or not, which will consume an additional 15GB of GPU memory.
 
+### Weighted score
 
+We use the following equation to calculate the final weighted score: 
+
+$$
+   \text{Score} = \text{CLIPIQA} + \text{MANIQA} + \frac{\text{MUSIQ}}{100} + \max\left(0, \frac{10 - \text{NIQE}}{10}\right) + \frac{\text{QALIGN}}{5} + \max\left(0, \frac{100-\text{FID}}{100}\right). 
+$$
+
+The score is calculated on the averaged IQA scores on all the val/test datasets. 
 
 ## License and Acknowledgement
 
