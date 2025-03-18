@@ -252,15 +252,36 @@ if __name__ == "__main__":
 
         average_results["All"]['low_ID_Sim'] = total_below_threshold
 
+        average_results["Weight Score"] = {}
+        average_results["Weight Score"]['Total'] = 0
+        for metric, value in average_results['All'].items():
+            if metric == 'low_ID_Sim' or metric == 'ID_Sim':
+                continue
+            if metric == 'FID':
+                average_results["Weight Score"]['FID'] = max(0, (100 - value) / 100)    # FID is a lower-is-better metric
+            elif metric == 'NIQE':
+                average_results["Weight Score"]['NIQE'] = max(0, (10 - value) / 10)     # NIQE is a lower-is-better metric
+            elif metric == 'CLIP_IQA':
+                average_results["Weight Score"]['CLIP_IQA'] = value
+            elif metric == 'MANIQA':
+                average_results["Weight Score"]['MANIQA'] = value
+            elif metric == 'MUSIQ':
+                average_results["Weight Score"]['MUSIQ'] = value / 100
+            elif metric == 'QALIGN':
+                average_results["Weight Score"]['QALIGN'] = value / 5
+            else:
+                print(f"Unknown metric: {metric}")
+        average_results["Weight Score"]['Total'] = sum(average_results["Weight Score"].values())
+        
         for dataset, metrics in average_results.items():
             print(f"Average results for {dataset}:")
             for metric, avg_value in metrics.items():
                 print(f"  {metric}: {avg_value:.4f}")
-
+        
         with open(average_results_filename, 'w', newline='') as f:
             writer = csv.writer(f)
 
-            header = ['Dataset', 'NIQE', 'CLIP_IQA', 'MANIQA', 'MUSIQ', 'QALIGN', 'FID', 'ID_Sim', 'low_ID_Sim']
+            header = ['Dataset', 'NIQE', 'CLIP_IQA', 'MANIQA', 'MUSIQ', 'QALIGN', 'FID', 'ID_Sim', 'low_ID_Sim', 'Total']
             writer.writerow(header)
 
             for dataset, metrics in average_results.items():
