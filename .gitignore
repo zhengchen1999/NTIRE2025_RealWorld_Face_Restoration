@@ -7,7 +7,8 @@
 # *.jpg
 *.pt
 *.gif
-# *.pth
+*.pth
+*.ckpt
 *.dat
 *.zip
 
@@ -16,15 +17,8 @@
 # User generates files
 IQA_results/
 
-model_zoo/*.pth
-model_zoo/*.pt
-model_zoo/*.ckpt
-model_zoo/*.bin
-
-pretrained/*.pth
-pretrained/*.pt
-pretrained/*.ckpt
-pretrained/*.bin
+model_zoo/team00_CodeFormer/CodeFormer
+model_zoo/team00_CodeFormer/facelib
 
 NTIRE-FR
 
@@ -141,3 +135,31 @@ run.sh
 *debug*
 *_old*
 
+# MacOS gitignore 
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk

@@ -252,20 +252,48 @@ if __name__ == "__main__":
 
         average_results["All"]['low_ID_Sim'] = total_below_threshold
 
+        average_results["Weighted Score"] = {}
+        average_results["Weighted Score"]['Total'] = 0
+        for metric, value in average_results['All'].items():
+            if metric == 'low_ID_Sim' or metric == 'ID_Sim':
+                continue
+            if metric == 'FID':
+                average_results["Weighted Score"]['FID'] = max(0, (100 - value) / 100)    # FID is a lower-is-better metric
+            elif metric == 'NIQE':
+                average_results["Weighted Score"]['NIQE'] = max(0, (10 - value) / 10)     # NIQE is a lower-is-better metric
+            elif metric == 'CLIP_IQA':
+                average_results["Weighted Score"]['CLIP_IQA'] = value
+            elif metric == 'MANIQA':
+                average_results["Weighted Score"]['MANIQA'] = value
+            elif metric == 'MUSIQ':
+                average_results["Weighted Score"]['MUSIQ'] = value / 100
+            elif metric == 'QALIGN':
+                average_results["Weighted Score"]['QALIGN'] = value / 5
+            else:
+                print(f"Unknown metric: {metric}")
+        average_results["Weighted Score"]['Total'] = sum(average_results["Weighted Score"].values())
+        
         for dataset, metrics in average_results.items():
             print(f"Average results for {dataset}:")
             for metric, avg_value in metrics.items():
-                print(f"  {metric}: {avg_value:.4f}")
-
+                if metric == 'low_ID_Sim':
+                    if dataset == 'All' :
+                        print(f"  Low ID Similarity: {avg_value}/{total_images}")
+                    else:
+                        print(f"  Low ID Similarity: {avg_value}/{dataset_counts[dataset]}")
+                else:
+                    print(f"  {metric}: {avg_value:.4f}")
+        
         with open(average_results_filename, 'w', newline='') as f:
             writer = csv.writer(f)
 
-            header = ['Dataset', 'NIQE', 'CLIP_IQA', 'MANIQA', 'MUSIQ', 'QALIGN', 'FID', 'ID_Sim', 'low_ID_Sim']
+            header = ['Dataset', 'NIQE', 'CLIP_IQA', 'MANIQA', 'MUSIQ', 'QALIGN', 'FID', 'ID_Sim', 'low_ID_Sim', 'Total']
             writer.writerow(header)
 
             for dataset, metrics in average_results.items():
                 row = [dataset] + [metrics.get(key, 0) for key in header[1:]]
                 writer.writerow(row)
+            print(f"Average IQA results and Weighted Score have been saved to {average_results_filename} file")
 
         with open(results_filename, mode='w', newline='') as file:
             writer = csv.writer(file)
@@ -273,5 +301,4 @@ if __name__ == "__main__":
             for filename, values in results.items():
                 row = [filename] + [values.get(key, 0) for key in all_keys]
                 writer.writerow(row)
-
-        print(f"IQA results have been saved to {results_filename} file")
+            print(f"IQA results have been saved to {results_filename} file")
