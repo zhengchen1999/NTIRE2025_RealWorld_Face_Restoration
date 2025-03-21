@@ -1,6 +1,7 @@
 from os import path as osp
 from torch.utils import data as data
 from torchvision.transforms.functional import normalize
+import glob
 
 from VQFR.vqfr.data.data_util import paths_from_lmdb
 from VQFR.vqfr.utils import FileClient, imfrombytes, img2tensor, scandir
@@ -40,7 +41,7 @@ class SingleImageDataset(data.Dataset):
             with open(self.opt['meta_info_file'], 'r') as fin:
                 self.paths = [osp.join(self.lq_folder, line.rstrip().split(' ')[0]) for line in fin]
         else:
-            self.paths = sorted(list(scandir(self.lq_folder, full_path=True, recursive=True)))
+            self.paths = sorted(glob.glob(osp.join(self.lq_folder, '**', '*.png'), recursive=True))
 
     def __getitem__(self, index):
         if self.file_client is None:

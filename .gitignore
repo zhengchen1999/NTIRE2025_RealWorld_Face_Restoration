@@ -17,6 +17,8 @@
 # User generates files
 IQA_results/
 
+data2/
+
 model_zoo/team00_CodeFormer/CodeFormer
 model_zoo/team00_CodeFormer/facelib
 
