@@ -1,5 +1,11 @@
 # [NTIRE 2025 Challenge on Real-World Face Restoration](https://cvlai.net/ntire/2025/) @ [CVPR 2025](https://cvpr.thecvf.com/)
 
+[![page](https://img.shields.io/badge/NTIRE-Website-blue?logo=github&logoSvg)](https://www.cvlai.net/ntire/2025/)
+[![arXiv](https://img.shields.io/badge/Report-arXiv-red?logo=arxiv&logoSvg)](https://arxiv.org/abs/2504.14600)
+[![supp](https://img.shields.io/badge/Supplementary-Paper-orange.svg)](https://github.com/zhengchen1999/NTIRE2025_RealWorld_Face_Restoration/releases/download/supp/NTIRE.2025.Real-World.Face.Restoration.Supplementary.pdf)
+[![visitors](https://visitor-badge.laobi.icu/badge?page_id=zhengchen1999.NTIRE2025_RealWorld_Face_Restoration&right_color=violet)](https://github.com/zhengchen1999/NTIRE2025_RealWorld_Face_Restoration)
+[![GitHub Stars](https://img.shields.io/github/stars/zhengchen1999/NTIRE2025_RealWorld_Face_Restoration?style=social)](https://github.com/zhengchen1999/NTIRE2025_RealWorld_Face_Restoration)
+
 ## How to test the baseline model?
 
 1. `git clone https://github.com/zhengchen1999/NTIRE2025_RealWorld_Face_Restoration.git`
