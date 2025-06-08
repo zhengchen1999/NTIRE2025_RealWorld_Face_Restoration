@@ -6,6 +6,52 @@
 [![visitors](https://visitor-badge.laobi.icu/badge?page_id=zhengchen1999.NTIRE2025_RealWorld_Face_Restoration&right_color=violet)](https://github.com/zhengchen1999/NTIRE2025_RealWorld_Face_Restoration)
 [![GitHub Stars](https://img.shields.io/github/stars/zhengchen1999/NTIRE2025_RealWorld_Face_Restoration?style=social)](https://github.com/zhengchen1999/NTIRE2025_RealWorld_Face_Restoration)
 
+## About the Challenge
+
+This challenge focuses on restoring real-world degraded face images. The task is to recover high-quality face images with rich high-frequency details from low-quality inputs. At the same time, the output should preserve facial identity to a reasonable degree. There are no restrictions on computational resources such as model size or FLOPs. The main goal is to **achieve the best possible image quality and identity consistency**. 
+Participants are ranked based on visual quality while ensuring identity similarity above a threshold; final scores combine several no-reference IQA metrics and FID. 
+
+## Challenge results
+**Test Set** – 450 low-quality (LQ) images drawn from five real-world subsets (WIDER-Test, WebPhoto-Test, CelebChild-Test, LFW-Test, and CelebA) are provided for evaluation.  
+  
+**Identity Validation** – Cosine similarity is measured with a pretrained **AdaFace** model. Thresholds: 0.30 (WIDER & WebPhoto), 0.60 (LFW & CelebChild), 0.50 (CelebA). A submission fails if more than ten faces fall below the dataset-specific threshold.  
+  
+**Metrics** – Valid submissions are scored with six no-reference metrics: **CLIPIQA, MANIQA, MUSIQ, Q-Align, NIQE,** and **FID** (against FFHQ).  
+  
+**Overall Score**
+$$
+\text{Score} = \text{CLIPIQA} + \text{MANIQA} + \frac{\text{MUSIQ}}{100} + \max\left(0, \frac{10 - \text{NIQE}}{10}\right) + \frac{\text{QALIGN}}{5} + \max\left(0, \frac{100-\text{FID}}{100}\right). 
+$$
+**Ranking rule** – Teams are first screened by the identity filter; qualifying entries are ranked descending by the overall score. Minor deviations between Codalab and reproduced scores are tolerated after code verification.  
+  
+**Resources** – Official evaluation scripts, pretrained models, and baseline code are available in this public repository.  
+<p align="center">
+<img src="figs/results.png" width="1000px"/>
+</p>
+
+## Conclusion
+
+The NTIRE 2025 Real‑World Face Restoration Challenge accelerated progress in blind face‑restoration and clarified which strategies work best in practice. Key insights are:
+
+1. **Competition‑driven progress**  
+   The track drew **141 registered teams and 10 valid finalists**, using an AdaFace identity filter (cosine ≥ 0.30–0.60 depending on dataset) before scoring. This ensured models work on real images—avoiding overfitting to synthetic data.
+
+2. **Diffusion vs. Transformer strengths**  
+   - **Diffusion-based pipelines** (e.g., DiffBIR) excel at hallucinating high-frequency texture, producing visually realistic details on degraded inputs.  
+   - **Transformer-centric methods** (e.g., CodeFormer) better preserve global structure and identity fidelity, ensuring the output “still looks like the person.”
+
+3. **Hybrid & joint-optimization yield best results**  
+   Top solutions fuse a Transformer “cleanup” stage with a diffusion “texture” stage—or blend expert modules with joint tuning—to produce outputs that are both natural and identity-faithful. Examples include MoE-style entries that dynamically re-weight texture and structure models at inference.
+
+## About this repository
+
+This repository is the summary of the solutions submitted by the participants during the challenge.
+The model script and the pretrained weight parameters are provided in [`models`](./models) and [`model_zoo`](./model_zoo) folder, respectively.
+Each team is assigned a number according the submission time of the solution. 
+You can find the correspondence between the number and team in [`test.select_model`](./test.py).
+Some participants would like to keep their models confidential. 
+Thus, those models are not included in this repository.
+
 ## How to test the baseline model?
 
 1. `git clone https://github.com/zhengchen1999/NTIRE2025_RealWorld_Face_Restoration.git`
