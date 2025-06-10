@@ -1,6 +1,6 @@
 # [NTIRE 2025 Challenge on Real-World Face Restoration](https://cvlai.net/ntire/2025/) @ [CVPR 2025](https://cvpr.thecvf.com/)
 
-[![ntire](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fraw.githubusercontent.com%2Fzhengchen1999%2FNTIRE2025_RealWorld_Face_Restoration%2Fnew-readme%2Ffigs%2Fdiamond_badge.json)](https://www.cvlai.net/ntire/2025/)
+[![ntire](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fraw.githubusercontent.com%2Fzhengchen1999%2FNTIRE2025_RealWorld_Face_Restoration%2Fmain%2Ffigs%2Fdiamond_badge.json)](https://www.cvlai.net/ntire/2025/)
 [![page](https://img.shields.io/badge/Project-Page-blue?logo=github&logoSvg)](https://ntire-face.github.io/)
 [![arXiv](https://img.shields.io/badge/Report-arXiv-red?logo=arxiv&logoSvg)](https://arxiv.org/abs/2504.14600)
 [![supp](https://img.shields.io/badge/Supplementary-Paper-orange.svg)](https://github.com/zhengchen1999/NTIRE2025_RealWorld_Face_Restoration/releases/download/supp/NTIRE.2025.Real-World.Face.Restoration.Supplementary.pdf)
