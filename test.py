@@ -21,6 +21,26 @@ def select_model(args, device):
         name = f"{model_id:02}_CodeFormer_baseline"
         model_path = os.path.join('model_zoo', 'team00_CodeFormer')
         model_func = CodeFormer
+    elif model_id==2:
+        name = f"{model_id:02}_faceRes"
+        from models.team02_faceRes.combined_inference import run_inference
+        model_path=os.path.join("model_zoo", 'team02_faceRes')
+        model_func=run_inference
+    elif model_id==200:
+        name = f"{model_id:02}_ZSSR"
+        from models.team02_ZSSR.zssr import ZSSRWrapper
+        from models.team02_ZSSR.config import set_config
+        config = set_config()
+        config.accelerator = "gpu" if device.type == "cuda" else "cpu"
+        zssr_wrapper = ZSSRWrapper(config)
+        model_path = None
+        model_func = zssr_wrapper.wrapper
+    elif model_id == 4:
+        # CodeFormer baseline, NIPS 2022
+        from models.team04_cfDiffbir.pipeline import pipe as team04_pipeline
+        name = f"{model_id:02}_cfDiffbir"
+        model_path = os.path.join('model_zoo', 'team04_cfDiffbir')
+        model_func = team04_pipeline
     else:
         raise NotImplementedError(f"Model {model_id} is not implemented.")
 
