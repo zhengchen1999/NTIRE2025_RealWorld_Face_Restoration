@@ -32,6 +32,9 @@ $$
 <img src="figs/results.png" width="1000px"/>
 </p>
 
+## Certificates
+The top three teams in this competition have been awarded **NTIRE 2025 award certificates**. The certificates can be downloaded from [Google Drive](https://drive.google.com/file/d/14iuA_IQzq-BCwHmp3nG6BcLfbBbeFO01/view?usp=sharing).
+
 ## Conclusion
 
 The NTIRE 2025 Real‑World Face Restoration Challenge accelerated progress in blind face‑restoration and clarified which strategies work best in practice. Key insights are:
