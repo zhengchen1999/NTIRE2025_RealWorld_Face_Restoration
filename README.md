@@ -2,7 +2,7 @@
 
 [![ntire](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fraw.githubusercontent.com%2Fzhengchen1999%2FNTIRE2025_RealWorld_Face_Restoration%2Fmain%2Ffigs%2Fdiamond_badge.json)](https://www.cvlai.net/ntire/2025/)
 [![page](https://img.shields.io/badge/Project-Page-blue?logo=github&logoSvg)](https://ntire-face.github.io/)
-[![arXiv](https://img.shields.io/badge/Report-arXiv-red?logo=arxiv&logoSvg)](https://arxiv.org/abs/2504.14600)
+[![arXiv](https://img.shields.io/badge/Report-arXiv-red?logo=arxiv&logoSvg)](https://arxiv.org/pdf/2504.14600)
 [![supp](https://img.shields.io/badge/Supplementary-Paper-orange.svg)](https://github.com/zhengchen1999/NTIRE2025_RealWorld_Face_Restoration/releases/download/supp/NTIRE.2025.Real-World.Face.Restoration.Supplementary.pdf)
 [![visitors](https://visitor-badge.laobi.icu/badge?page_id=zhengchen1999.NTIRE2025_RealWorld_Face_Restoration&right_color=violet)](https://github.com/zhengchen1999/NTIRE2025_RealWorld_Face_Restoration)
 [![GitHub Stars](https://img.shields.io/github/stars/zhengchen1999/NTIRE2025_RealWorld_Face_Restoration?style=social)](https://github.com/zhengchen1999/NTIRE2025_RealWorld_Face_Restoration)
@@ -14,20 +14,21 @@ Participants are ranked based on visual quality while ensuring identity similari
 
 ## Challenge results
 **Test Set** – 450 low-quality (LQ) images drawn from five real-world subsets (WIDER-Test, WebPhoto-Test, CelebChild-Test, LFW-Test, and CelebA) are provided for evaluation.  
-  
+
 **Identity Validation** – Cosine similarity is measured with a pretrained **AdaFace** model. Thresholds: 0.30 (WIDER & WebPhoto), 0.60 (LFW & CelebChild), 0.50 (CelebA). A submission fails if more than ten faces fall below the dataset-specific threshold.  
-  
+
 **Metrics** – Valid submissions are scored with six no-reference metrics: **CLIPIQA, MANIQA, MUSIQ, Q-Align, NIQE,** and **FID** (against FFHQ).  
-  
+
 **Overall Score**
 
 $$
-\text{Score} = \text{CLIPIQA} + \text{MANIQA} + \frac{\text{MUSIQ}}{100} + \max\left(0, \frac{10 - \text{NIQE}}{10}\right) + \frac{\text{QALIGN}}{5} + \max\left(0, \frac{100-\text{FID}}{100}\right). 
+\text{Score} = \text{CLIPIQA} + \text{MANIQA} + \frac{\text{MUSIQ}}{100} + \max\left(0, \frac{10 - \text{NIQE}}{10}\right) + \frac{\text{QALIGN}}{5} + \max\left(0, \frac{100-\text{FID}}{100}\right).
 $$
 
 **Ranking rule** – Teams are first screened by the identity filter; qualifying entries are ranked descending by the overall score. Minor deviations between Codalab and reproduced scores are tolerated after code verification.  
-  
+
 **Resources** – Official evaluation scripts, pretrained models, and baseline code are available in this public repository.  
+
 <p align="center">
 <img src="figs/results.png" width="1000px"/>
 </p>
@@ -39,24 +40,19 @@ The top three teams in this competition have been awarded **NTIRE 2025 award cer
 
 The NTIRE 2025 Real‑World Face Restoration Challenge accelerated progress in blind face‑restoration and clarified which strategies work best in practice. Key insights are:
 
-1. **Competition‑driven progress**  
+1. **Competition‑driven progress**
    The track drew **141 registered teams and 10 valid finalists**, using an AdaFace identity filter (cosine ≥ 0.30–0.60 depending on dataset) before scoring. This ensured models work on real images—avoiding overfitting to synthetic data.
 
-2. **Diffusion vs. Transformer strengths**  
+2. **Diffusion vs. Transformer strengths**
    - **Diffusion-based pipelines** (e.g., DiffBIR) excel at hallucinating high-frequency texture, producing visually realistic details on degraded inputs.  
    - **Transformer-centric methods** (e.g., CodeFormer) better preserve global structure and identity fidelity, ensuring the output “still looks like the person.”
 
-3. **Hybrid & joint-optimization yield best results**  
+3. **Hybrid & joint-optimization yield best results**
    Top solutions fuse a Transformer “cleanup” stage with a diffusion “texture” stage—or blend expert modules with joint tuning—to produce outputs that are both natural and identity-faithful. Examples include MoE-style entries that dynamically re-weight texture and structure models at inference.
 
 ## About this repository
 
-This repository is the summary of the solutions submitted by the participants during the challenge.
-The model script and the pretrained weight parameters are provided in [`models`](./models) and [`model_zoo`](./model_zoo) folder, respectively.
-Each team is assigned a number according the submission time of the solution. 
-You can find the correspondence between the number and team in [`test.select_model`](./test.py).
-Some participants would like to keep their models confidential. 
-Thus, those models are not included in this repository.
+This repository summarizes the solutions submitted by the participants during the challenge. The model script and the pre-trained weight parameters are provided in the [models](./models) and [model_zoo](./model_zoo) folders. Each team is assigned a number according to the submission time of the solution. You can find the correspondence between the number and team in [test.select_model](./test.py). Some participants would like to keep their models confidential. Thus, those models are not included in this repository.
 
 ## How to test the model?
 
@@ -168,21 +164,20 @@ The `eval.py` file accepts the following 6 parameters:
 We use the following equation to calculate the final weighted score: 
 
 $$
-   \text{Score} = \text{CLIPIQA} + \text{MANIQA} + \frac{\text{MUSIQ}}{100} + \max\left(0, \frac{10 - \text{NIQE}}{10}\right) + \frac{\text{QALIGN}}{5} + \max\left(0, \frac{100-\text{FID}}{100}\right). 
+\text{Score} = \text{CLIPIQA} + \text{MANIQA} + \frac{\text{MUSIQ}}{100} + \max\left(0, \frac{10 - \text{NIQE}}{10}\right) + \frac{\text{QALIGN}}{5} + \max\left(0, \frac{100-\text{FID}}{100}\right).
 $$
 
 The score is calculated on the averaged IQA scores on all the val/test datasets. 
 
-## <a name="citation"></a> Citation
+## Citation
 
 If you find the code helpful in your research or work, please cite the following paper(s).
 
 ```
-@inproceedings{ntire2025face,
-  title={NTIRE 2025 Challenge on Real-World Face Restoration: Methods and Results},
-  author={Zheng Chen and Jingkai Wang and Kai Liu and Jue Gong and Lei Sun and
-	Zongwei Wu and Radu Timofte and Yulun Zhang and others},
-  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Workshops},
+@inproceedings{ntiface25face,
+  title={NTIRE 2025 challenge on real-world face restoration: Methods and results},
+  author={Chen, Zheng and Wang, Jingkai and Liu, Kai and Gong, Jue and Sun, Lei and Wu, Zongwei and Timofte, Radu and Zhang, Yulun and others},
+  booktitle={CVPRW},
   year={2025}
 }
 ```
