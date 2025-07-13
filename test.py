@@ -21,26 +21,84 @@ def select_model(args, device):
         name = f"{model_id:02}_CodeFormer_baseline"
         model_path = os.path.join('model_zoo', 'team00_CodeFormer')
         model_func = CodeFormer
-    elif model_id==2:
+
+    elif model_id == 1:
+        from models.team01_AllForFace import main as AllForFace
+        name = f"{model_id:02}_AllForFace_baseline"
+        model_path = os.path.join('model_zoo', 'team01_AllForFace')
+        model_func = AllForFace
+
+    elif model_id == 2:
+        from models.team02_SDFace.main import main as SDFace
+        name = f"{model_id:02}_SDFace"
+        model_path = os.path.join('model_zoo', 'team02_SDFace', 'net_g_final.pth')
+        model_func = SDFace
+
+    elif model_id == 3:
+        from models.team03_PiSAMAP import main as PiSAMAP
+        name = f"{model_id:02}_PiSAMAP"
+        model_path = os.path.join('model_zoo', 'team03_PiSAMAP')
+        model_func = PiSAMAP
+
+    elif model_id == 4:
+        from models.team04_MiPortraitSR.main import MPSR
+        name = f"{model_id:02}_MiPortraitSR"
+        model_path = os.path.join('model_zoo', 'team04_MiPortraitSR')
+        model_func = MPSR
+
+    elif model_id==5:
         name = f"{model_id:02}_faceRes"
-        from models.team02_faceRes.combined_inference import run_inference
+        from models.team05_faceRes.combined_inference import run_inference
         model_path=os.path.join("model_zoo", 'team02_faceRes')
         model_func=run_inference
-    elif model_id==200:
+
+    elif model_id==500:
         name = f"{model_id:02}_ZSSR"
-        from models.team02_ZSSR.zssr import ZSSRWrapper
-        from models.team02_ZSSR.config import set_config
+        from models.team05_ZSSR.zssr import ZSSRWrapper
+        from models.team05_ZSSR.config import set_config
         config = set_config()
         config.accelerator = "gpu" if device.type == "cuda" else "cpu"
         zssr_wrapper = ZSSRWrapper(config)
         model_path = None
         model_func = zssr_wrapper.wrapper
-    elif model_id == 4:
+
+    elif model_id == 6:     #change the model_id with Model ID
+        from models.team06_DSS import main as Dssmodel
+        name = f"{model_id:02}_Dssmodel_baseline"
+        model_path = os.path.join('model_zoo', 'team06_DSS')      #abs path
+        model_func = Dssmodel
+
+    elif model_id == 7:
+        from models.team07_DiffBIR.inference_diffbir import main as team07_DiffBIR
+        name = f"{model_id:02}_DiffBIR"
+        model_path = os.path.join('model_zoo', 'team07_DiffBIR')
+        model_func = team07_DiffBIR
+
+    elif model_id == 8:
+        from models.team08_DCMoE import main as DCMoE
+        name = f"{model_id:02}_DCMoE"
+        model_path = os.path.join('model_zoo', 'team08_DCMoE')
+        model_func = DCMoE
+
+    elif model_id == 9:
+        from models.team09_good import main as good
+        name = f"{model_id:02}_good"
+        model_path = os.path.join('model_zoo', 'team09_good')
+        model_func = good
+
+    elif model_id == 10:
         # CodeFormer baseline, NIPS 2022
-        from models.team04_cfDiffbir.pipeline import pipe as team04_pipeline
+        from models.team10_cfDiffbir.pipeline import pipe as team10_pipeline
         name = f"{model_id:02}_cfDiffbir"
-        model_path = os.path.join('model_zoo', 'team04_cfDiffbir')
-        model_func = team04_pipeline
+        model_path = os.path.join('model_zoo', 'team10_cfDiffbir')
+        model_func = team10_pipeline
+
+    elif model_id == 12:
+        from models.team12_diffbir.run import run as run_infer
+        name = f"{model_id:02}_CustomModel"
+        model_path = None
+        model_func = run_infer
+
     else:
         raise NotImplementedError(f"Model {model_id} is not implemented.")
 

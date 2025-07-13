@@ -57,24 +57,25 @@ This repository summarizes the solutions submitted by the participants during th
 ## How to test the model?
 
 1. `git clone https://github.com/zhengchen1999/NTIRE2025_RealWorld_Face_Restoration.git`
-2. Select the model you would like to test:
+2. Download the model weights from:
+
+    - [Google Drive](https://drive.google.com/drive/folders/19_xeQjOWCF7BZz7eCRUu1jX8F9VC4IeT?usp=drive_link)
+
+    Put the downloaded weights in the `./model_zoo` folder.
+
+3. Select the model you would like to test:
     ```bash
     CUDA_VISIBLE_DEVICES=0 python test.py --valid_dir [path to val data dir] --test_dir [path to test data dir] --save_dir [path to your save dir] --model_id 0
     ```
     - You can use either `--valid_dir`, or `--test_dir`, or both of them. Be sure the change the directories `--valid_dir`/`--test_dir` and `--save_dir`.
-    - Switch models (default is CodeFormer) through commenting the code in [test.py](./test.py#L19). Caution: You should download the pretrained model from the link in the `model_zoo/**/*.txt`, and put the files in following structure (take CodeFormer as an example): 
-      ```
-      model_zoo
-      └── team00_CodeFormer
-         ├── CodeFormer
-         │   └── codeformer.pth
-         └── facelib
-            ├── detection_Resnet50_Final.pth
-            └── parsing_parsenet.pth
-      ```
+    - Switch models (default is CodeFormer) through commenting the code in [test.py](./test.py#L19).
 
-3. We also provide the output of each team in [TBD](). You can directly download the output of each team and evaluate the model using the provided script.
-4. Some methods cannot be integrated into our codebase. We provide their instructions in the corresponding folder. If you still fail to test the model, please contact the team leaders. Their contact information is as follows:
+4. We also provide the output of each team from:
+
+    - [Google Drive](https://drive.google.com/drive/folders/1p-gCIHleJP1XK1gXpiWa-HFETiD3TeEf?usp=drive_link)
+
+    You can directly download the output of each team and evaluate the model using the provided script.
+5. Some methods cannot be integrated into our codebase. We provide their instructions in the corresponding folder. If you still fail to test the model, please contact the team leaders. Their contact information is as follows:
 
 | Index | Team        | Leader              | Email                                                             |
 |-------| ----------- | ------------------- | ----------------------------------------------------------------- |

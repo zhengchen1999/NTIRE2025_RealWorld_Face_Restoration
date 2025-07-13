@@ -1,0 +1,43 @@
+pytorch-lightning
+torch
+tqdm
+bcolz-zipline
+prettytable
+menpo
+pandas
+mxnet
+opencv-python
+einops
+lmdb
+numpy
+opencv-python
+pyyaml
+scikit-learn
+scipy
+tensorboard
+timm
+torchvision
+realesrgan
+yapf
+basicsr>=1.4.2
+facexlib>=0.2.5
+tb-nightly
+torchaudio
+xformers
+omegaconf==2.3.0
+accelerate==0.28.0
+ftfy==6.2.0
+regex==2023.12.25
+python-dateutil==2.9.0.post0
+protobuf==4.25.3 # for tensorboard
+lpips==0.1.4
+gradio==4.43.0
+polars==1.12.0
+torchsde==0.2.6
+bitsandbytes==0.44.1
+# requirements for llava
+transformers==4.37.2
+tokenizers==0.15.1
+sentencepiece==0.1.99
+# requirements for ram
+fairscale==0.4.4
