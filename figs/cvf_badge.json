@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "label": "NTIRE",
+  "message": "Website",
+  "color": "ff69b4",
+  "style": "flat",
+  "logoSvg": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<svg xmlns=\"http://www.w3.org/2000/svg\"\n     width=\"27\" height=\"20\" viewBox=\"0 0 27 20\"\n     preserveAspectRatio=\"xMidYMid meet\">\n  <image href=\"https://openaccess.thecvf.com/img/cropped-cvf-s.jpg\" width=\"27\" height=\"20\"/>\n</svg>"
+}
