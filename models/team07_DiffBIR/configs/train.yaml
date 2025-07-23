@@ -1,6 +1,6 @@
 model:
   cldm:
-    target: models.team11_DiffBIR.diffbir.model.cldm.ControlLDM
+    target: models.team07_DiffBIR.diffbir.model.cldm.ControlLDM
     params:
       latent_scale_factor: 0.18215
       unet_cfg:
@@ -67,7 +67,7 @@ model:
         legacy: False
 
   swinir:
-    target: models.team11_DiffBIR.diffbir.model.swinir.SwinIR
+    target: models.team07_DiffBIR.diffbir.model.swinir.SwinIR
     params:
       img_size: 64
       patch_size: 1
@@ -85,7 +85,7 @@ model:
       unshuffle_scale: 8
 
   diffusion:
-    target: models.team11_DiffBIR.diffbir.model.gaussian_diffusion.Diffusion
+    target: models.team07_DiffBIR.diffbir.model.gaussian_diffusion.Diffusion
     params:
       linear_start: 0.00085
       linear_end: 0.0120

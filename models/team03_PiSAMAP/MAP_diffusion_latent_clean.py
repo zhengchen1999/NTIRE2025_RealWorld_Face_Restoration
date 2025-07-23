@@ -1,18 +1,18 @@
 from torch import nn
-from models.team09_PiSAMAP.helper_functions import *
-import models.team09_PiSAMAP.memcnn as memcnn
-from models.team09_PiSAMAP.LIQE_clean import LIQE_ms
+from models.team03_PiSAMAP.helper_functions import *
+import models.team03_PiSAMAP.memcnn as memcnn
+from models.team03_PiSAMAP.LIQE_clean import LIQE_ms
 import pyiqa
 import torch
 from torchvision import models, transforms
 #from wavelet_color_fix import adaptive_instance_normalization, wavelet_reconstruction, wavelet_decomposition
 from torch import autocast
 import torch.nn.functional as F
-from models.team09_PiSAMAP.mapping_clean import logistic_mapping
+from models.team03_PiSAMAP.mapping_clean import logistic_mapping
 from tqdm import tqdm
 torch.autograd.set_detect_anomaly(False)
 torch.set_grad_enabled(False)
-from models.team09_PiSAMAP.nlpd import NLPD
+from models.team03_PiSAMAP.nlpd import NLPD
 import os
 from diffusers import DDIMScheduler
 #from models.team99_PiSASR.ram import inference_ram as inference
@@ -188,7 +188,7 @@ def quality_loss_fn(quality_model_str='liqe', device='cpu', grad_scale=0):
         mono = 1
         fp32 = True
     elif quality_model_str == 'ms_liqe':
-        model = LIQE_ms(ckpt='model_zoo/team09_PiSAMAP/MS_LIQE.pt', device=device, scale=[1,0.75])
+        model = LIQE_ms(ckpt='model_zoo/team03_PiSAMAP/MS_LIQE.pt', device=device, scale=[1,0.75])
         model.eval()
         mono = 1
         fp32 = True
@@ -203,7 +203,7 @@ def quality_loss_fn(quality_model_str='liqe', device='cpu', grad_scale=0):
         mono = 1
         fp32 = True
     elif quality_model_str == 'hybrid':
-        model = LIQE_ms(ckpt='model_zoo/team09_PiSAMAP/MS_LIQE.pt', device=device, scale=[1,0.75])
+        model = LIQE_ms(ckpt='model_zoo/team03_PiSAMAP/MS_LIQE.pt', device=device, scale=[1,0.75])
         model.eval()
         mono = 1
         model2 = pyiqa.create_metric('musiq', as_loss=True)

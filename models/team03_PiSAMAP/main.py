@@ -7,11 +7,11 @@ from torchvision import transforms
 import torchvision.transforms.functional as F
 
 from .pisasr import PiSASR_eval
-from models.team09_PiSAMAP.src.my_utils.wavelet_color_fix import adain_color_fix, wavelet_color_fix
+from models.team03_PiSAMAP.src.my_utils.wavelet_color_fix import adain_color_fix, wavelet_color_fix
 
 import glob
-from models.team09_PiSAMAP.MAP_diffusion_latent_clean import gen, quality_loss_fn
-from models.team09_PiSAMAP.helper_functions import clip_tokenizer, clip, device, torch_dtype
+from models.team03_PiSAMAP.MAP_diffusion_latent_clean import gen, quality_loss_fn
+from models.team03_PiSAMAP.helper_functions import clip_tokenizer, clip, device, torch_dtype
 from torch import autocast
 
 null_prompt = ''
@@ -65,7 +65,7 @@ def main(model_dir, input_path, output_path, device):
                         default='cuda:0')
 
     args = parser.parse_args()
-    args.pretrained_model_path = os.path.join(model_dir, 'stable-diffusion-2-1-base')
+    args.pretrained_model_path = os.path.join('pretrained', 'stable-diffusion-2-1-base')
     args.pretrained_path = os.path.join(model_dir, 'preset/models/pisa_sr.pkl')
 
     # Initialize the model

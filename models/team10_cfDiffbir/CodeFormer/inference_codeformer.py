@@ -4,6 +4,11 @@ import argparse
 import glob
 import torch
 from torchvision.transforms.functional import normalize
+
+import sys
+project_root = os.path.dirname(__file__)
+sys.path.insert(0, project_root)
+
 from basicsr.utils import imwrite, img2tensor, tensor2img
 from basicsr.utils.download_util import load_file_from_url
 from basicsr.utils.misc import gpu_is_available, get_device

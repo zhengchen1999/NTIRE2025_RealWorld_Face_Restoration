@@ -15,7 +15,7 @@ Author: Sil van de Leemput
 """
 import torch.nn as nn
 import math
-from models.team09_PiSAMAP.memcnn.models.revop import InvertibleModuleWrapper, create_coupling
+from models.team03_PiSAMAP.memcnn.models.revop import InvertibleModuleWrapper, create_coupling
 
 __all__ = ['ResNet', 'BasicBlock', 'Bottleneck', 'RevBasicBlock', 'RevBottleneck', 'BasicBlockSub', 'BottleneckSub',
            'conv3x3', 'batch_norm']

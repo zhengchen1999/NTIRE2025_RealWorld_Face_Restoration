@@ -111,8 +111,8 @@ def load_file_from_url(url, model_dir=None, progress=True, file_name=None):
 
 
 def load_model_from_url(url: str) -> Dict[str, torch.Tensor]:
-    sd_path = load_file_from_url(url, model_dir="models/team04_cfDiffbir/DiffBIR/weights/")
-    #sd_path="/home/hp/work/DiffBIR/weights/v2-1_512-ema-pruned.ckpt"
+    sd_path = load_file_from_url(url, model_dir="models/team10_cfDiffbir/DiffBIR/weights")
+    # sd_path="models/team10_cfDiffbir/DiffBIR/weights/v2-1_512-ema-pruned.ckpt"
     sd = torch.load(sd_path, map_location="cpu")
     if "state_dict" in sd:
         sd = sd["state_dict"]

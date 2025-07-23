@@ -60,9 +60,10 @@ This repository summarizes the solutions submitted by the participants during th
 1. `git clone https://github.com/zhengchen1999/NTIRE2025_RealWorld_Face_Restoration.git`
 2. Download the model weights from:
 
-    - [Google Drive](https://drive.google.com/drive/folders/19_xeQjOWCF7BZz7eCRUu1jX8F9VC4IeT?usp=drive_link)
-
-    Put the downloaded weights in the `./model_zoo` folder.
+    - [model zoo folder: Google Drive](https://drive.google.com/drive/folders/19_xeQjOWCF7BZz7eCRUu1jX8F9VC4IeT?usp=drive_link)
+    - [pretrained folder: Google Drive](https://drive.google.com/drive/folders/1PFnR9d5_yQOehUxGhi1S0OfBz_W3QI2T?usp=sharing)
+   
+    Put the downloaded weights in the `./model_zoo` and `./pretrained` folders.
 
 3. Select the model you would like to test:
     ```bash

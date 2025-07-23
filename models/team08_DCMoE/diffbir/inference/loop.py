@@ -48,7 +48,7 @@ class InferenceLoop:
 
     def load_cldm(self) -> None:
         self.cldm: ControlLDM = instantiate_from_config(
-            OmegaConf.load("./models/team16_DCMoE/configs/inference/cldm.yaml")
+            OmegaConf.load("./models/team08_DCMoE/configs/inference/cldm.yaml")
         )
 
         # load pre-trained SD weight
@@ -90,9 +90,9 @@ class InferenceLoop:
 
         # load diffusion
         if self.args.version in ["v1", "v2"]:
-            config = "./models/team16_DCMoE/configs/inference/diffusion.yaml"
+            config = "./models/team08_DCMoE/configs/inference/diffusion.yaml"
         else:
-            config = "./models/team16_DCMoE/configs/inference/diffusion_v2.1.yaml"
+            config = "./models/team08_DCMoE/configs/inference/diffusion_v2.1.yaml"
         self.diffusion: Diffusion = instantiate_from_config(OmegaConf.load(config))
         self.diffusion.to(self.args.device)
 

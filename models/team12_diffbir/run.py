@@ -58,7 +58,7 @@ def parse_usm_param_key(best_combination):
 
 # 定义基础命令
 base_command = [
-    "python", "-u", "models/team06_diffbir/inference.py",
+    "python", "-u", "models/team12_diffbir/inference.py",
     "--task", "face",
     "--upscale", "1",
     "--version", "v2",
@@ -231,8 +231,8 @@ def parse_best_combination(best_combination):
     return params
 
 def run(model_dir, input_path, output_path, device):
-    csv_file = "models/team06_diffbir/merged_combinations_bond05.csv"  # 替换为实际 CSV 文件路径
-    usm_csv_file = "models/team06_diffbir/results_best_combinations_usm.csv"
+    csv_file = "models/team12_diffbir/merged_combinations_bond05.csv"  # 替换为实际 CSV 文件路径
+    usm_csv_file = "models/team12_diffbir/results_best_combinations_usm.csv"
     # input_path = "/root/autodl-tmp/data/face/test/test"  # 替换为实际输入图片路径
     # output_path = "output/output1"  # 替换为实际输出文件夹路径
     device = "cuda"  

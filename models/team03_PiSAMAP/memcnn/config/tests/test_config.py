@@ -1,9 +1,9 @@
 import unittest
 import json
 import os
-from models.team09_PiSAMAP.memcnn.experiment.factory import load_experiment_config, experiment_config_parser
-from models.team09_PiSAMAP.memcnn.config import Config
-import models.team09_PiSAMAP.memcnn.config
+from models.team03_PiSAMAP.memcnn.experiment.factory import load_experiment_config, experiment_config_parser
+from models.team03_PiSAMAP.memcnn.config import Config
+import models.team03_PiSAMAP.memcnn.config
 
 
 class ConfigTestCase(unittest.TestCase):

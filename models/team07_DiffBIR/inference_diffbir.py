@@ -45,7 +45,7 @@ def main(model_dir=None, input_path=None, output_path=None, device='cuda'):
     args.task = 'face'
     args.upscale = 1
     args.version = 'v2'
-    args.train_cfg = 'models/team11_DiffBIR/configs/train.yaml'
+    args.train_cfg = 'models/team07_DiffBIR/configs/train.yaml'
     args.sampler = 'spaced'
     args.steps = 50
     args.start_point_type = 'noise'

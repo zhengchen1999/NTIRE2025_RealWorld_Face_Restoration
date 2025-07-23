@@ -17,7 +17,7 @@ class BFRInferenceLoop(InferenceLoop):
 
     def load_cleaner(self) -> None:
         self.cleaner: SwinIR = instantiate_from_config(
-            OmegaConf.load("models/team06_diffbir/configs/inference/swinir.yaml")
+            OmegaConf.load("models/team12_diffbir/configs/inference/swinir.yaml")
         )
         pt_number = self.args.swindegrad_pt
         

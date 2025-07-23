@@ -47,8 +47,8 @@ class SDXL_Turbo(nn.Module):
 
     def __init__(self, rank=32):
         super(SDXL_Turbo, self).__init__()
-        self.unet = UNet2DConditionModel.from_pretrained("/data2/pretrained/sdxl-turbo", subfolder="unet")
-        self.vae = AutoencoderKL.from_pretrained("/data2/pretrained/sdxl-turbo", subfolder="vae")
+        self.unet = UNet2DConditionModel.from_pretrained("./pretrained/sdxl-turbo", subfolder="unet")
+        self.vae = AutoencoderKL.from_pretrained("./pretrained/sdxl-turbo", subfolder="vae")
         self.unet.requires_grad_(False)
         self.vae.requires_grad_(False)
         self.timestep = torch.tensor(999., dtype=torch.float32)
@@ -60,13 +60,13 @@ class SDXL_Turbo(nn.Module):
         vae_lora_config = get_lora_config(rank=rank, use_dora=False, target_modules=vae_target_modules)
         self.vae.add_adapter(vae_lora_config)
 
-        self.add_text_embeds = torch.load('./models/team07_SDFace/add_text_embeds.pt', map_location='cpu')
+        self.add_text_embeds = torch.load('./models/team02_SDFace/add_text_embeds.pt', map_location='cpu')
         self.add_text_embeds = self.add_text_embeds.to(torch.float32)
 
-        self.add_time_ids = torch.load('./models/team07_SDFace/add_time_ids.pt', map_location='cpu')
+        self.add_time_ids = torch.load('./models/team02_SDFace/add_time_ids.pt', map_location='cpu')
         self.add_time_ids = self.add_time_ids.to(torch.float32)
 
-        self.prompt_embeds = torch.load('./models/team07_SDFace/prompt_embeds.pt', map_location='cpu')
+        self.prompt_embeds = torch.load('./models/team02_SDFace/prompt_embeds.pt', map_location='cpu')
         self.prompt_embeds = self.prompt_embeds.to(torch.float32)
 
         print("SDXL_Turbo initialized")

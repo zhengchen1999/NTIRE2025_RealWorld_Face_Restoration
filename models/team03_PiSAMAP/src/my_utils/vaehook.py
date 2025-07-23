@@ -70,7 +70,7 @@ import os
 import sys
 sys.path.append(os.getcwd())
 #sys.path.append('..')
-import models.team09_PiSAMAP.src.my_utils.devices as devices
+import models.team03_PiSAMAP.src.my_utils.devices as devices
 
 try:
     import xformers

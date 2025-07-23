@@ -6,9 +6,9 @@ from basicsr.utils.download_util import load_file_from_url
 from facexlib.utils.face_restoration_helper import FaceRestoreHelper
 from torchvision.transforms.functional import normalize
 
-from models.team02_faceRes.gfpgan.archs.gfpgan_bilinear_arch import GFPGANBilinear
-from models.team02_faceRes.gfpgan.archs.gfpganv1_arch import GFPGANv1
-from models.team02_faceRes.gfpgan.archs.gfpganv1_clean_arch import GFPGANv1Clean
+from models.team05_faceRes.gfpgan.archs.gfpgan_bilinear_arch import GFPGANBilinear
+from models.team05_faceRes.gfpgan.archs.gfpganv1_arch import GFPGANv1
+from models.team05_faceRes.gfpgan.archs.gfpganv1_clean_arch import GFPGANv1Clean
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -88,7 +88,7 @@ class GFPGANer():
 
         if model_path.startswith('https://'):
             model_path = load_file_from_url(
-                url=model_path, model_dir=os.path.join(ROOT_DIR, 'gfpgan/weights'), progress=True, file_name=None)
+                url=model_path, model_dir=os.path.join(ROOT_DIR, 'pretrained/gfpgan/weights'), progress=True, file_name=None)
         loadnet = torch.load(model_path)
         if 'params_ema' in loadnet:
             keyname = 'params_ema'

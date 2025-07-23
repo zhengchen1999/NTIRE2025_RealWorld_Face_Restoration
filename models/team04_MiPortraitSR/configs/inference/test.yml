@@ -42,7 +42,7 @@ diffbir:
 
 
 pisa:
-  pretrained_model_path: stabilityai/stable-diffusion-2-1-base
+  pretrained_model_path: pretrained/stable-diffusion-2-1-base
   pretrained_path: pisa_sr.pkl
   seed: 42
   process_size: 512

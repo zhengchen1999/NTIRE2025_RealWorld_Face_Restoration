@@ -4,8 +4,8 @@ import numpy as np
 import torch
 import torch.nn as nn
 
-from models.team09_PiSAMAP.memcnn.models.additive import AdditiveCoupling
-from models.team09_PiSAMAP.memcnn.models.affine import AffineCoupling
+from models.team03_PiSAMAP.memcnn.models.additive import AdditiveCoupling
+from models.team03_PiSAMAP.memcnn.models.affine import AffineCoupling
 
 try:
     from torch.cuda.amp import custom_fwd, custom_bwd

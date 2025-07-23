@@ -13,10 +13,10 @@ from diffusers import (
     SD3Transformer2DModel,
     StableDiffusion3Pipeline,
 )
-from models.team02_faceRes.models.autoencoder_kl import AutoencoderKL
-from models.team02_faceRes.utils.vaehook import _init_tiled_vae
-from models.team02_faceRes.utils.wavelet_color_fix import adain_color_fix, wavelet_color_fix
-from models.team02_faceRes.utils.util import load_lora_state_dict
+from models.team05_faceRes.models.autoencoder_kl import AutoencoderKL
+from models.team05_faceRes.utils.vaehook import _init_tiled_vae
+from models.team05_faceRes.utils.wavelet_color_fix import adain_color_fix, wavelet_color_fix
+from models.team05_faceRes.utils.util import load_lora_state_dict
 
 def parse_args():
     parser = argparse.ArgumentParser()

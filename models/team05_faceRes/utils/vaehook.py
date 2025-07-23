@@ -69,7 +69,7 @@ from einops import rearrange
 import os
 import sys
 sys.path.append(os.getcwd())
-import  models.team02_faceRes.utils.device as devices
+import  models.team05_faceRes.utils.device as devices
 
 try:
     import xformers

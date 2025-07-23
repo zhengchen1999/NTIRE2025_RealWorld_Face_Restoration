@@ -5,6 +5,9 @@ import glob
 import torch
 from torchvision.transforms.functional import normalize
 
+project_root = os.path.dirname(__file__)
+sys.path.insert(0, project_root)
+
 from basicsr.utils import imwrite, img2tensor, tensor2img
 from basicsr.utils.download_util import load_file_from_url
 from basicsr.utils.misc import gpu_is_available, get_device
@@ -92,7 +95,7 @@ def main(model_dir, input_path=None, output_path=None, device=None, args=None):
     print(f"Output path: {output_path}")
 
     target = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'weights')
-    # target = '/data_share/cya/2/NTIRE2025_RealWorld_Face_Restoration-AIIALab-16/model_zoo/team16_DCMoE/CodeFormer'
+    # target = '/data_share/cya/2/NTIRE2025_RealWorld_Face_Restoration-AIIALab-16/model_zoo/team08_DCMoE/CodeFormer'
     if os.path.exists(target):
         print(f"{target} already exists. Removing it...")
         os.remove(target)
@@ -332,4 +335,4 @@ if __name__ == '__main__':
     parser.add_argument('--save_video_fps', type=float, default=None, help='Frame rate for saving video. Default: None')
 
     args = parser.parse_args()
-    main(model_dir='./model_zoo/team16_DCMoE/CodeFormer', args=args)
+    main(model_dir='./model_zoo/team08_DCMoE/CodeFormer', args=args)

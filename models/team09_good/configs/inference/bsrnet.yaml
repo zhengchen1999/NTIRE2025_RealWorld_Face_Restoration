@@ -1,4 +1,4 @@
-target: models.team08_good.diffbir.model.RRDBNet
+target: models.team09_good.diffbir.model.RRDBNet
 params:
   in_nc: 3
   out_nc: 3

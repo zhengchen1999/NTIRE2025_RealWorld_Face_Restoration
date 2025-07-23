@@ -14,8 +14,8 @@ import shutil
 # from test_tsdsr import main as tsdsr_main
 # import test_tsdsr.main as tsdsr_main
 import argparse
-from models.team02_faceRes.test_tsdsr import main as  tsdsr_main
-from models.team02_faceRes.gfpgan import GFPGANer
+from models.team05_faceRes.test_tsdsr import main as  tsdsr_main
+from models.team05_faceRes.gfpgan import GFPGANer
 
 
 

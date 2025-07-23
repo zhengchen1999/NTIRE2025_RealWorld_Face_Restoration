@@ -7,7 +7,7 @@ from torchvision import transforms
 import torchvision.transforms.functional as F
 
 from pisasr import PiSASR_eval
-from models.team09_PiSAMAP.src import adain_color_fix, wavelet_color_fix
+from models.team03_PiSAMAP.src import adain_color_fix, wavelet_color_fix
 
 import glob
 

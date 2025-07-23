@@ -1,4 +1,4 @@
-target: models.team08_good.diffbir.model.Diffusion
+target: models.team09_good.diffbir.model.Diffusion
 params:
   linear_start: 0.00085
   linear_end: 0.0120

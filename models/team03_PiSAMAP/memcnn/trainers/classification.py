@@ -2,8 +2,8 @@ import time
 import logging
 import torch
 import numpy as np
-from models.team09_PiSAMAP.memcnn.utils.stats import AverageMeter, accuracy
-from models.team09_PiSAMAP.memcnn.utils.log import SummaryWriter
+from models.team03_PiSAMAP.memcnn.utils.stats import AverageMeter, accuracy
+from models.team03_PiSAMAP.memcnn.utils.log import SummaryWriter
 
 logger = logging.getLogger('trainer')
 

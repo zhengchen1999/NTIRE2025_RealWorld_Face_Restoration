@@ -1,4 +1,4 @@
-target: models.team08_good.diffbir.model.SwinIR
+target: models.team09_good.diffbir.model.SwinIR
 params:
   img_size: 64
   patch_size: 1

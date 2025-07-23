@@ -1,6 +1,6 @@
 import torch
 import torch.nn as nn
-import models.team09_PiSAMAP.memcnn
+import models.team03_PiSAMAP.memcnn
 
 
 # define a new torch Module with a sequence of operations: Relu o BatchNorm2d o Conv2d

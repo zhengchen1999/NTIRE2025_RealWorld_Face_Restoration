@@ -37,15 +37,15 @@ MODELS = {
     # the following checkpoint is up-to-date, we use the old version in our paper
     # "swinir_face": "https://kkgithub.com/zsyOAOA/DifFace/releases/download/V1.0/General_Face_ffhq512.pth",
     # "swinir_face": "https://hf-mirror.com/lxq007/DiffBIR/resolve/main/face_swinir_v1.ckpt",
-    "swinir_face": "./model_zoo/team16_DCMoE/DiffBIR/swinir.pth",
+    "swinir_face": "./model_zoo/team08_DCMoE/DiffBIR/swinir.pth",
     # "scunet_psnr": "https://kkgithub.com/cszn/KAIR/releases/download/v1.0/scunet_color_real_psnr.pth",
     # "swinir_general": "https://hf-mirror.com/lxq007/DiffBIR/resolve/main/general_swinir_v1.ckpt",
     # "swinir_realesrgan": "https://hf-mirror.com/lxq007/DiffBIR-v2/resolve/main/realesrgan_s4_swinir_100k.pth",
     # --------------- pre-trained stable diffusion weights ---------------
-    "sd_v2.1": "./model_zoo/team16_DCMoE/DiffBIR/v2-1_512-ema-pruned.ckpt",
+    "sd_v2.1": "./model_zoo/team08_DCMoE/DiffBIR/v2-1_512-ema-pruned.ckpt",
     # "sd_v2.1_zsnr": "https://hf-mirror.com/lxq007/DiffBIR-v2/resolve/main/sd2.1-base-zsnr-laionaes5.ckpt",
     # --------------- IRControlNet weights ---------------
-    "v1_face": "./model_zoo/team16_DCMoE/DiffBIR/v1_face.pth",
+    "v1_face": "./model_zoo/team08_DCMoE/DiffBIR/v1_face.pth",
     # "v1_general": "https://hf-mirror.com/lxq007/DiffBIR-v2/resolve/main/v1_general.pth",
     # "v2": "https://hf-mirror.com/lxq007/DiffBIR-v2/resolve/main/v2.pth",
     # "v2.1": "https://hf-mirror.com/lxq007/DiffBIR-v2/resolve/main/DiffBIR_v2.1.pt",

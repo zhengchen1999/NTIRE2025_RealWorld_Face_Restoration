@@ -1,4 +1,4 @@
-target: models.team08_good.diffbir.model.SCUNet
+target: models.team09_good.diffbir.model.SCUNet
 params:
   in_nc: 3
   config: [4,4,4,4,4,4,4]

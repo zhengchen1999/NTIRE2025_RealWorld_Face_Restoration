@@ -6,3 +6,4 @@ opencv_python_headless==4.8.1.78
 pytorch_lightning==2.1.0
 torch==2.1.0+cu118
 torchvision==0.16.0+cu118
+ninja==1.11.1.4

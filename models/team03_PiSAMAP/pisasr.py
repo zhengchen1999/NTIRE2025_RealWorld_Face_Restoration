@@ -16,7 +16,7 @@ from .models.autoencoder_kl import AutoencoderKL
 from .models.unet_2d_condition import UNet2DConditionModel
 
 sys.path.append(os.getcwd())
-from models.team09_PiSAMAP.src.my_utils.vaehook import VAEHook
+from models.team03_PiSAMAP.src.my_utils.vaehook import VAEHook
 
 ## nonlinear mappings
 # LIVE 2 param

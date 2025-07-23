@@ -37,10 +37,10 @@ def partition_images(low_id_file, input_dir, dir1, dir2):
                     
 
 def run_inference_codeformer(model_dir, input_dir, output_dir):
-    subprocess.run(['python', './models/team16_DCMoE/inference_codeformer.py', '-i', input_dir, '-o', output_dir])
+    subprocess.run(['python', './models/team08_DCMoE/inference_codeformer.py', '-i', input_dir, '-o', output_dir])
 
 def run_inference_diffbir(model_dir, input_dir, output_dir):
-    subprocess.run(['python', './models/team16_DCMoE/inference_diffbir.py', '--input', input_dir, '--output', output_dir])
+    subprocess.run(['python', './models/team08_DCMoE/inference_diffbir.py', '--input', input_dir, '--output', output_dir])
 
 def merge_results(output_dir1, output_dir2, final_output_dir):
     os.makedirs(final_output_dir, exist_ok=True)
@@ -65,9 +65,9 @@ def main(model_dir, input_path, output_path, device=None):
     device = get_device()
     print(f'Running on device: {device}')
 
-    low_id_file = './models/team16_DCMoE/low_ID.txt'
-    dir1 = './models/team16_DCMoE/data/dir1/test'
-    dir2 = './models/team16_DCMoE/data/dir2/test'
+    low_id_file = './models/team08_DCMoE/low_ID.txt'
+    dir1 = './models/team08_DCMoE/data/dir1/test'
+    dir2 = './models/team08_DCMoE/data/dir2/test'
 
     # output_dir1 = './data/output_dir1_test'
     # output_dir2 = './data/output_dir2_test'

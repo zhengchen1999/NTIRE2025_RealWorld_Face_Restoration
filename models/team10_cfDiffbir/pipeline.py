@@ -1,11 +1,11 @@
 import pdb
 def pipe(model_dir, input_path=None, output_path=None, device=None, args=None):
-    from models.team04_cfDiffbir.CodeFormer import main as CodeFormer
+    from models.team10_cfDiffbir.CodeFormer import main as CodeFormer
     import os
-    pdb.set_trace()
+    # pdb.set_trace()
     CodeFormer(model_dir=model_dir+"/codeformer_weights", input_path=input_path, output_path=output_path, device=device)
 
-    pdb.set_trace()
+    # pdb.set_trace()
     target = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'DiffBIR/weights')
     if os.path.exists(target):
         print(f"{target} already exists. Removing it...")

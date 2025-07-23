@@ -4,7 +4,7 @@ from transformers import CLIPModel, CLIPTextModel, CLIPTokenizer, CLIPImageProce
 import numpy as np
 from PIL import Image, ImageOps
 import torch
-from models.team09_PiSAMAP.ram.models.ram_lora import ram
+from models.team03_PiSAMAP.ram.models.ram_lora import ram
 
 torch_dtype = torch.float16
 np_dtype = np.float16
@@ -200,11 +200,11 @@ def prepare_latents(batch_size, num_channels_latents, height, width, dtype, devi
     return latents
 
 from diffusers import AutoencoderKL, UNet2DConditionModel, StableDiffusionPipeline, StableDiffusionUpscalePipeline, EulerDiscreteScheduler
-from models.team09_PiSAMAP.seesr_models.controlnet import ControlNetModel
-from models.team09_PiSAMAP.seesr_models.unet_2d_condition import UNet2DConditionModel
+from models.team03_PiSAMAP.seesr_models.controlnet import ControlNetModel
+from models.team03_PiSAMAP.seesr_models.unet_2d_condition import UNet2DConditionModel
 
-pretrained_model_path = 'model_zoo/team09_PiSAMAP/stable-diffusion-2-base'
-seesr_model_path = 'model_zoo/team09_PiSAMAP/seesr/models/seesr'
+pretrained_model_path = 'pretrained/stable-diffusion-2-base'
+seesr_model_path = 'model_zoo/team03_PiSAMAP/seesr/models/seesr'
 
 scheduler = EulerDiscreteScheduler.from_pretrained(pretrained_model_path, subfolder="scheduler")
 clip = CLIPTextModel.from_pretrained(pretrained_model_path, subfolder="text_encoder")
@@ -230,8 +230,8 @@ ram_transforms = transforms.Compose([
             transforms.Resize((384, 384)),
             transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
         ])
-ram_model = ram(pretrained='model_zoo/team09_PiSAMAP/seesr/models/ram_swin_large_14m.pth',
-            pretrained_condition='model_zoo/team09_PiSAMAP/seesr/models/DAPE.pth',
+ram_model = ram(pretrained='model_zoo/team03_PiSAMAP/seesr/models/ram_swin_large_14m.pth',
+            pretrained_condition='model_zoo/team03_PiSAMAP/seesr/models/DAPE.pth',
             image_size=384,
             vit='swin_l')
 ram_model.eval()

@@ -49,7 +49,7 @@ def select_model(args, device):
     elif model_id==5:
         name = f"{model_id:02}_faceRes"
         from models.team05_faceRes.combined_inference import run_inference
-        model_path=os.path.join("model_zoo", 'team02_faceRes')
+        model_path=os.path.join("model_zoo", 'team05_faceRes')
         model_func=run_inference
 
     elif model_id==500:
@@ -65,7 +65,7 @@ def select_model(args, device):
     elif model_id == 6:     #change the model_id with Model ID
         from models.team06_DSS import main as Dssmodel
         name = f"{model_id:02}_Dssmodel_baseline"
-        model_path = os.path.join('model_zoo', 'team06_DSS')      #abs path
+        model_path = os.path.abspath(os.path.join(os.path.dirname(__file__), 'model_zoo', 'team06_DSS'))
         model_func = Dssmodel
 
     elif model_id == 7:
