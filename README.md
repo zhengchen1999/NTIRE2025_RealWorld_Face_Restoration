@@ -58,10 +58,10 @@ This repository summarizes the solutions submitted by the participants during th
 ## How to test the model?
 
 1. `git clone https://github.com/zhengchen1999/NTIRE2025_RealWorld_Face_Restoration.git`
-2. Download the model weights from:
+2. Download the model weights from Hugging Face:
 
-    - [model zoo folder: Google Drive](https://drive.google.com/drive/folders/19_xeQjOWCF7BZz7eCRUu1jX8F9VC4IeT?usp=drive_link)
-    - [pretrained folder: Google Drive](https://drive.google.com/drive/folders/1PFnR9d5_yQOehUxGhi1S0OfBz_W3QI2T?usp=sharing)
+    - [model zoo folder: Hugging Face](https://huggingface.co/GOBUNU/NTIRE2025_RealWorld_Face_Restoration/tree/main/model_zoo)
+    - [pretrained folder: Hugging Face](https://huggingface.co/GOBUNU/NTIRE2025_RealWorld_Face_Restoration/tree/main/pretrained)
    
     Put the downloaded weights in the `./model_zoo` and `./pretrained` folders.
 
